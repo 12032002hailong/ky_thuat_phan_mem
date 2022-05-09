@@ -7,8 +7,8 @@ const salt = bcrypt.genSaltSync(10);
 let hashUserPassword = (password) => {
     return new Promise(async (resolve, reject) => {
         try {
-            //lưu ý, truyền vào đúng password cần hash
-            // let hashPassWord = await bcrypt.hashSync("B4c0/\/", salt); => copy paste mà ko edit nè
+           
+            
             let hashPassWord = await bcrypt.hashSync(password, salt);
 
             resolve(hashPassWord);
@@ -26,9 +26,8 @@ let handleUserLogin = (email, password) => {
             let userData = {};
             let isExist = await checkUserEmail(email);
             if (isExist) {
-                //user already exist
                 let user = await db.User.findOne({
-                    attributes: ['email', 'roleId', 'password', 'firstName', 'lastName'],
+                    attributes: ['id','email', 'roleId', 'password', 'firstName', 'lastName'],
                     where: { email: email },
                     raw: true,
 

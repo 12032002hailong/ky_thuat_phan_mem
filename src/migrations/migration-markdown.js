@@ -3,17 +3,17 @@ module.exports={
     up: async (queryInterface, Sequelize) =>{
         await queryInterface.createTable('markdowns', {
             id: {
-                allowNull:false,
+                allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type:Sequelize.INTEGER
             },
             contentHTML: {
-                allowNull:false,
+                allowNull: false,
                 type:Sequelize.TEXT('long')
             },
             contentMarkdown:{
-                allowNull:false,
+                allowNull: false,
                 type: Sequelize.TEXT('long')
             },
             description:{
@@ -21,15 +21,15 @@ module.exports={
                 type: Sequelize.TEXT('long')
             },
             doctorId:{
-                allowNull:false,
+                allowNull: true,
                 type: Sequelize.INTEGER
             },
             specialtyId:{
-                allowNull:false,
+                allowNull: true,
                 type: Sequelize.INTEGER
             },
             clinicId:{
-                allowNull:false,
+                allowNull: true,
                 type: Sequelize.INTEGER
             },
             createdAt:{
@@ -37,7 +37,7 @@ module.exports={
                 type:Sequelize.DATE
             },
             updatedAt:{
-                allowNull:false,
+                allowNull: false,
                 type: Sequelize.DATE
             }
         });
@@ -45,4 +45,4 @@ module.exports={
     down: async (queryInterface, Sequelize) => {
         await queryInterface.dropTable('markdowns');
     }
-}
+};

@@ -5,7 +5,7 @@ import initWebRoutes from "./route/web";
 import connectDB from './config/conectDB';
 import cors from 'cors';
 
-require('dotenv').config();   // giup chayj dc dong process.env
+require('dotenv').config();   // 
 
 
 let app = express();
